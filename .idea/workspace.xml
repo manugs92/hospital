@@ -2,60 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../BoteGalletas/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BoteGalletas/src/Casa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BoteGalletas/src/MembreFamilia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BoteGalletas/src/Pot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/opencsv_2_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/alerts/Alerts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/checks/Checks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/hospital.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/hospital2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fxml/patientsList.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/icon-hospital.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Hospital.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Patient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Persona.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strings/StringAlerts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strings/StringController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strings/Strings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../javafxmaven/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../javafxmaven/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../javafxmaven/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../javafxmaven/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../javafxmaven/src/main/java/Window.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../javafxmaven/src/main/java/fxml/window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Aplicacion-SuperMercado/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Aplicacion-SuperMercado/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Aplicacion-SuperMercado/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Aplicacion-SuperMercado/Aplicacion-SuperMercado.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Aplicacion-SuperMercado/src/Alimentacion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Aplicacion-SuperMercado/src/Electronica.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Aplicacion-SuperMercado/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Aplicacion-SuperMercado/src/Productos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Aplicacion-SuperMercado/src/Textil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-Exceptions/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-Exceptions/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-Exceptions/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-Exceptions/mgomez-Exceptions.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-Exceptions/src/ActivitatExceptions/Control/OperacionsBanc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-Exceptions/src/ActivitatExceptions/Exceptions/BankAccountException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-Exceptions/src/ActivitatExceptions/Exceptions/ExceptionMessage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-Exceptions/src/ActivitatExceptions/Model/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-Exceptions/src/ActivitatExceptions/Model/CompteEstalvi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-Exceptions/src/ActivitatExceptions/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-dados-2/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-dados-2/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-dados-2/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-dados-2/mgomez-dados-2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-dados-2/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-dados/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-dados/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-dados/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-dados/mgomez-dados.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mgomez-dados/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -111,7 +59,7 @@
     <session id="1751581543">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="1" />
@@ -121,9 +69,10 @@
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -161,6 +110,14 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1452567020">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
@@ -170,7 +127,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/control/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
+            <state relative-caret-position="429">
               <caret line="155" column="5" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -202,7 +159,8 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -276,7 +234,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -345,6 +302,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -363,6 +321,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -527,7 +486,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.23373677" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.24130106" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -546,7 +505,7 @@
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="12" visible="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32786885" />
       <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -570,6 +529,9 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -702,7 +664,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/control/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
+        <state relative-caret-position="429">
           <caret line="155" column="5" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
