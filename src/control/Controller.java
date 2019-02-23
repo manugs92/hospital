@@ -56,6 +56,7 @@ public class Controller {
      * */
     public void initialize() throws IOException {
         patientsList.getChildren().add(FXMLLoader.load(getClass().getResource("../fxml/patientsList.fxml")));
+        patientsFilter.getChildren().add(FXMLLoader.load(getClass().getResource("../fxml/patientsList.fxml")));
         try {
             configFile = ck.ifConfigFileExist();
             String[] content = config.ReadContent();
