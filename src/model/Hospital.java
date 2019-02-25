@@ -1,6 +1,7 @@
 package model;
 
 import au.com.bytecode.opencsv.CSVReader;
+import javafx.beans.property.SetProperty;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class Hospital {
             while ((line = csvreader.readNext()) != null) {
                 //System.out.println(line[0] + ":" + line[4]);
                 mapPatients.putIfAbsent(line[0],
-                        new Patient(line[0],
+                        new Patient( line[0],
                                 line[1],
                                 line[2],
                                 LocalDate.parse(line[3],formatter),
@@ -49,5 +50,9 @@ public class Hospital {
 
     public String GetName() {
         return this.name;
+    }
+
+    public Map<String,Patient> getMapPatients() {
+        return this.mapPatients;
     }
 }

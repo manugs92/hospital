@@ -10,6 +10,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -20,6 +21,7 @@ import java.util.Collection;
 import model.Hospital;
 import model.Patient;
 import strings.StringController;
+import strings.Strings;
 
 public class Controller {
 
@@ -35,8 +37,12 @@ public class Controller {
     @FXML
     AnchorPane patientsList,patientsFilter,patientsStats,manageAwaitList,seeAwaitList;
 
+    @FXML
+    Text title;
+
     private Checks ck = new Checks();
     private Config config = new Config();
+    private PatientsListController patientsListController = new PatientsListController();
 
     private Hospital hospital = new Hospital();
     private static File configFile;
@@ -55,13 +61,12 @@ public class Controller {
      * it he wants to create the config file.
      * */
     public void initialize() throws IOException {
-        patientsList.getChildren().add(FXMLLoader.load(getClass().getResource("../fxml/patientsList.fxml")));
-        patientsFilter.getChildren().add(FXMLLoader.load(getClass().getResource("../fxml/patientsList.fxml")));
         try {
             configFile = ck.ifConfigFileExist();
             String[] content = config.ReadContent();
             if (!config.ReadValueOfContent(content[0]).isEmpty() && !config.ReadValueOfContent(content[1]).isEmpty()) {
                 hospital.SetName(config.ReadValueOfContent(content[0]));
+                title.setText(Strings.NAME_OF_THE_APP+" "+hospital.GetName());
                 CreateHospital(config.ReadValueOfContent(content[1]));
             }else {
                 selector.getTabs().forEach(tab -> { tab.setDisable(true);tab.getContent().setVisible(false); });
@@ -113,9 +118,12 @@ public class Controller {
             } else {
                 /*
                  * If the selected file it's a CSV, we will create the hospital.
+                 * And make sure that the fxml for the list, is cleared.
+                 * (Because you can load a csv file even if you have loaded one hospital before)
                  * Then check if the config file exist, and if it exist, overwrite it with the new data of the new hospital.
                  * If it doesn't exist, we ask to the user if he wants to create it.*/
                 hospital.SetName("");
+                patientsList.getChildren().clear();
                 CreateHospital(selectedFile.toString());
                 try {
                     configFile = ck.ifConfigFileExist();
@@ -133,14 +141,15 @@ public class Controller {
 
     /*
      * Method that creates an hospital from the csv loaded
-     * First of all we ask to the user the name of the hospital. (It can't be empty so we loop the method until the user
-     * enter the name).
-     * When the hospital has a name, we put in the object hospital, and load the data in the collection Patient. (That
+     * If the hospital doesn't have a name, we force to the user to put one name to the hospital.
+     *(It can't be empty so we loop the method until the user enter the name).
+     * When the hospital have a name, we put it in the object hospital, and load the data in the collection Patient. (That
      * it's the content of the csv)
      * And then take positionated the user to the first tab. (Because we load a new Hospital)
      * And unlockAll the content. (It's usefull for when we create the hospital for the first time).
+     * Futhermore, we load the FXML that have the GUI of the patient's list.
      * */
-    public void CreateHospital(String selectedCSV) {
+    public void CreateHospital(String selectedCSV) throws IOException {
         if(hospital.GetName().isEmpty()) {
             String hospitalName = Alerts.SetHospitalName();
             if(hospitalName.isEmpty()) {
@@ -148,11 +157,13 @@ public class Controller {
                 CreateHospital(selectedCSV);
             }else {
                 hospital.SetName(hospitalName);
+                title.setText(Strings.NAME_OF_THE_APP+" "+hospital.GetName());
                 unlockAll();
             }
         }
-            Collection<Patient> patients = hospital.loadPacients(selectedCSV);
-            selector.getSelectionModel().selectFirst();
-            patients.forEach(p -> System.out.println(p.getNom()));
+        Collection<Patient> patients = hospital.loadPacients(selectedCSV);
+        selector.getSelectionModel().selectFirst();
+        patientsListController.init(patients);
+        patientsList.getChildren().add(FXMLLoader.load(getClass().getResource("../fxml/patientsList.fxml")));
     }
 }

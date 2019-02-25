@@ -1,2 +1,2 @@
-name = "sa"; 
-csv="C:\Users\mnu92\Desktop\IdeaProjects\Hospital\src\data\hospital.csv"
+name = "5"; 
+csv="C:\Users\mnu92\Desktop\M03\Hospital\src\data\hospital.csv"
