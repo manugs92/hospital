@@ -1,2 +1,0 @@
-name = "aaaa"; 
-csv="C:\Users\mnu92\Documents\cv\cv_informática\xd.csv"

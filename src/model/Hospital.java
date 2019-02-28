@@ -1,7 +1,7 @@
 package model;
 
 import au.com.bytecode.opencsv.CSVReader;
-import javafx.beans.property.SetProperty;
+import javafx.scene.control.CheckBox;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -15,16 +15,19 @@ import java.util.Map;
 public class Hospital {
 
     private String name;
-    private Map<String,Patient> mapPatients = new HashMap<>();
+    private Map<String,Patient> mapPatients;
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    CheckBox cb = null;
 
     public Collection<Patient> loadPacients(String file) {
         CSVReader csvreader = null;
         String[] line;
+        mapPatients  = new HashMap<>();
         try {
             csvreader = new CSVReader(new FileReader(file));
             csvreader.readNext(); //saltem primera línia de titols
             while ((line = csvreader.readNext()) != null) {
+                cb = new CheckBox();
                 //System.out.println(line[0] + ":" + line[4]);
                 mapPatients.putIfAbsent(line[0],
                         new Patient( line[0],
@@ -34,12 +37,14 @@ public class Hospital {
                                 Persona.Genere.valueOf(line[4]),
                                 line[5],
                                 Float.valueOf(line[6]),
-                                Integer.valueOf(line[7]))
+                                Integer.valueOf(line[7]),cb
+                                )
                 );
             }
         }catch (IOException e) {
             e.printStackTrace();
         }
+
         //Retornem la llista de valors
         return mapPatients.values();
     }
