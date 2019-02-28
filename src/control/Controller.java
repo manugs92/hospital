@@ -32,10 +32,10 @@ public class Controller {
     TabPane selector;
 
     @FXML
-    Tab tab1, tab2, tab3, tab4, tab5;
+    Tab tab1, tab2, tab3, tab5;
 
     @FXML
-    AnchorPane patientsList,patientsFilter,patientsStats,manageAwaitList,seeAwaitList;
+    AnchorPane patientsList,patientsFilter,patientsStats,seeAwaitList;
 
     @FXML
     Text title;
@@ -43,6 +43,7 @@ public class Controller {
     private Checks ck = new Checks();
     private Config config = new Config();
     private PatientsListController patientsListController = new PatientsListController();
+    private PatientsFilterListController patientsFilterListController = new PatientsFilterListController();
 
     private Hospital hospital = new Hospital();
     private static File configFile;
@@ -63,19 +64,19 @@ public class Controller {
     public void initialize() throws IOException {
         try {
             configFile = ck.ifConfigFileExist();
-            String[] content = config.ReadContent();
-            if (!config.ReadValueOfContent(content[0]).isEmpty() && !config.ReadValueOfContent(content[1]).isEmpty()) {
-                hospital.SetName(config.ReadValueOfContent(content[0]));
+            String[] content = config.readContent();
+            if (!config.readValueOfContent(content[0]).isEmpty() && !config.readValueOfContent(content[1]).isEmpty()) {
+                hospital.SetName(config.readValueOfContent(content[0]));
                 title.setText(Strings.NAME_OF_THE_APP+" "+hospital.GetName());
-                CreateHospital(config.ReadValueOfContent(content[1]));
+                createHospital(config.readValueOfContent(content[1]));
             }else {
                 selector.getTabs().forEach(tab -> { tab.setDisable(true);tab.getContent().setVisible(false); });
             }
         } catch (IOException ioex) {
             selector.getTabs().forEach(tab -> { tab.setDisable(true);tab.getContent().setVisible(false); });
-            boolean response = Alerts.ConfigFileNotFound();
+            boolean response = Alerts.configFileNotFound();
             if (response) {
-                config.CreateConfigFile();
+                config.createConfigFile();
             }
         }
     }
@@ -111,7 +112,7 @@ public class Controller {
              * */
             boolean result = ck.extensionCSV(selectedFile);
             if (!result) {
-                result = Alerts.ErrorCSVNotSelected();
+                result = Alerts.errorCSVNotSelected();
                 if (result) {
                     selectCSVToLoad();
                 }
@@ -124,15 +125,15 @@ public class Controller {
                  * If it doesn't exist, we ask to the user if he wants to create it.*/
                 hospital.SetName("");
                 patientsList.getChildren().clear();
-                CreateHospital(selectedFile.toString());
+                createHospital(selectedFile.toString());
                 try {
                     configFile = ck.ifConfigFileExist();
-                    config.WriteContent(hospital.GetName(), selectedFile.toString());
+                    config.writeContent(hospital.GetName(), selectedFile.toString());
                 } catch (IOException ioex) {
-                    boolean response = Alerts.ConfigFileNotFound();
+                    boolean response = Alerts.configFileNotFound();
                     if (response) {
-                        config.CreateConfigFile();
-                        config.WriteContent(hospital.GetName(), selectedFile.toString());
+                        config.createConfigFile();
+                        config.writeContent(hospital.GetName(), selectedFile.toString());
                     }
                 }
             }
@@ -149,12 +150,12 @@ public class Controller {
      * And unlockAll the content. (It's usefull for when we create the hospital for the first time).
      * Futhermore, we load the FXML that have the GUI of the patient's list.
      * */
-    public void CreateHospital(String selectedCSV) throws IOException {
+    public void createHospital(String selectedCSV) throws IOException {
         if(hospital.GetName().isEmpty()) {
-            String hospitalName = Alerts.SetHospitalName();
+            String hospitalName = Alerts.setHospitalName();
             if(hospitalName.isEmpty()) {
-                Alerts.HospitalNameIsEmpty();
-                CreateHospital(selectedCSV);
+                Alerts.hospitalNameIsEmpty();
+                createHospital(selectedCSV);
             }else {
                 hospital.SetName(hospitalName);
                 title.setText(Strings.NAME_OF_THE_APP+" "+hospital.GetName());
@@ -164,6 +165,8 @@ public class Controller {
         Collection<Patient> patients = hospital.loadPacients(selectedCSV);
         selector.getSelectionModel().selectFirst();
         patientsListController.init(patients);
+        patientsFilterListController.init(patients);
         patientsList.getChildren().add(FXMLLoader.load(getClass().getResource("../fxml/patientsList.fxml")));
+        patientsFilter.getChildren().add(FXMLLoader.load(getClass().getResource("../fxml/patientsFilterList.fxml")));
     }
 }

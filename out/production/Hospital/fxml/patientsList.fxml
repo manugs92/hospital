@@ -7,11 +7,13 @@
 
 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.PatientsListController">
    <children>
-      <TableView fx:id="tablePatients" layoutX="12.0" layoutY="69.0" onMouseClicked="#xd" prefHeight="200.0" prefWidth="880.0" />
+      <Button layoutX="562.0" layoutY="307.0" mnemonicParsing="false" onAction="#manage" text="Editar" />
+      <TableView fx:id="tablePatients" layoutX="12.0" layoutY="69.0" onMouseClicked="#tableClicked" prefHeight="200.0" prefWidth="880.0" />
       <Text layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de pacientes" underline="true" wrappingWidth="167.13671875">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Text>
-      <Button layoutX="705.0" layoutY="306.0" mnemonicParsing="false" onAction="#xd2" text="Borrar" />
+      <Button layoutX="492.0" layoutY="307.0" mnemonicParsing="false" onAction="#manage" text="Borrar" />
+      <Button layoutX="631.0" layoutY="307.0" mnemonicParsing="false" onAction="#manage" text="Añadir a lista de espera" />
    </children>
 </AnchorPane>

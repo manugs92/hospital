@@ -13,7 +13,7 @@ public class Alerts {
     /*
     * Alert that it's showed when the config file is not present.
     * */
-    public static boolean ConfigFileNotFound() {
+    public static boolean configFileNotFound() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle(StringAlerts.ERROR);
         alert.setHeaderText(StringAlerts.HEADER_ALERT_CONFIG_FILE_NOT_FOUNDED);
@@ -31,7 +31,7 @@ public class Alerts {
     /*
     * Alert showed when the file selected isn't be a CSV.
     * */
-    public static boolean ErrorCSVNotSelected() {
+    public static boolean errorCSVNotSelected() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(StringAlerts.ERROR);
         alert.setHeaderText(StringAlerts.HEADER_ALERT_CSV_NOT_SELECTED);
@@ -49,7 +49,7 @@ public class Alerts {
     /*
     * Alert showed to set the hospital name.
     * */
-    public static String SetHospitalName() {
+    public static String setHospitalName() {
         TextInputDialog textInputDialog = new TextInputDialog();
         textInputDialog.setTitle(StringAlerts.WINDOW_INPUT_TEXT);
         textInputDialog.setHeaderText(StringAlerts.HEADER_ALERT_INSERT_HOSPITAL_NAME);
@@ -66,7 +66,7 @@ public class Alerts {
     /*
     * Alert showed when the hospital name it's empty.
     * */
-    public static void HospitalNameIsEmpty() {
+    public static void hospitalNameIsEmpty() {
         Alert alert= new Alert(Alert.AlertType.ERROR);
         alert.setTitle(StringAlerts.ERROR);
         alert.setHeaderText(StringAlerts.HEADER_ALERT_EMPTY_HOSPITAL_NAME);

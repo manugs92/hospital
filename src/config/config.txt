@@ -1,2 +1,2 @@
-name = "xd"; 
+name = "akhsda"; 
 csv="C:\Users\mnu92\Desktop\M03\Hospital\src\data\hospital.csv"

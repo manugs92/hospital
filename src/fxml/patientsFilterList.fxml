@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.PatientsFilterListController">
+   <children>
+      <Button layoutX="562.0" layoutY="407.0" mnemonicParsing="false" onAction="#manage" text="Editar" />
+      <TableView fx:id="tablePatients" layoutX="14.0" layoutY="188.0" onMouseClicked="#tableClicked" prefHeight="200.0" prefWidth="880.0" />
+      <Text layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtrar pacientes" underline="true" wrappingWidth="167.13671875">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Text>
+      <Button layoutX="492.0" layoutY="407.0" mnemonicParsing="false" onAction="#manage" text="Borrar" />
+      <Button layoutX="631.0" layoutY="407.0" mnemonicParsing="false" onAction="#manage" text="Añadir a lista de espera" />
+      <TextField fx:id="name" layoutX="98.0" layoutY="67.0" />
+      <Text layoutX="26.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:" wrappingWidth="58.13671875" />
+      <TextField fx:id="lastname" layoutX="391.0" layoutY="67.0" prefHeight="25.0" prefWidth="155.0" />
+      <Text layoutX="289.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellidos:" wrappingWidth="58.13671875" />
+      <TextField fx:id="dni" layoutX="98.0" layoutY="107.0" />
+      <Text layoutX="26.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DNI:" wrappingWidth="58.13671875" />
+      <Text layoutX="289.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha nacimiento: " wrappingWidth="78.13671875" />
+      <DatePicker fx:id="birthdate" layoutX="392.0" layoutY="107.0" prefHeight="25.0" prefWidth="155.0" />
+      <Text layoutX="576.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Género" wrappingWidth="58.13671875" />
+      <CheckBox fx:id="man" layoutX="645.0" layoutY="71.0" mnemonicParsing="false" text="Hombre" />
+      <CheckBox fx:id="woman" layoutX="742.0" layoutY="71.0" mnemonicParsing="false" text="Mujer" />
+      <TextField fx:id="phone" layoutX="645.0" layoutY="107.0" prefHeight="25.0" prefWidth="155.0" />
+      <Text layoutX="573.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teléfono" wrappingWidth="58.13671875" />
+      <Button fx:id="filterList" layoutX="701.0" layoutY="145.0" mnemonicParsing="false" onMouseClicked="#search" text="Filtrar búsqueda" />
+   </children>
+</AnchorPane>

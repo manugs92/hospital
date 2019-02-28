@@ -1,50 +1,27 @@
 package control;
 
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import model.Patient;
 
 import java.util.Collection;
 
-
-public class PatientsListController {
-
-
-    /*
-    *  TODO: Poner botones de editar o borrar. (Seleccion multiple)
-    *  TODO: Al hacer doble click, abrir ventana con los datos del paciente. (Y lo puedes gestionar)
-    *  TODO: Amplicar tamaño de tabla y colocar scroll.
-    * */
+public class PatientsFilterListController extends PatientsListController {
 
     @FXML
     TableView<Patient> tablePatients;
 
-
-    public    static  ObservableList<Patient> data = FXCollections.observableArrayList();
-
-    /*
-    * Method that loads all the patients in the tableView.
-    * All times that we create a new Hospital, this method it's called.
-    * */
-    public static void init(Collection<Patient> patients) {
-        data.removeAll(data);
-        patients.forEach(patient -> {
-            Patient p = new Patient(patient.getDNI(), patient.getNom(), patient.getCognoms(), patient.getDataNaixament(), patient.getGenere(), patient.getTelefon(), patient.getPes(), patient.getAlçada(),new CheckBox());
-            data.add(p);
-        });
-    }
+    private static ObservableList<Patient> data2 = FXCollections.observableArrayList();
 
 
-    /*
-    * Method that runs every time that the patientList.fxml is loaded.
-    * The main function of this method, is create the TableView, and set the data of
-    * each patient on it.
-    * */
     public void initialize() {
         TableColumn DNI = new TableColumn<Patient,String>("DNI");
         DNI.setPrefWidth(80);
@@ -85,15 +62,20 @@ public class PatientsListController {
         Alçada.setCellValueFactory(new PropertyValueFactory<Patient, Integer>("Alçada"));
         CB.setCellValueFactory(new PropertyValueFactory<Patient, CheckBox>("cb"));
         tablePatients.getColumns().addAll(DNI, Nom, Cognoms, DataNaix, Gender, Telefon, pes, Alçada,CB);
-        tablePatients.setItems(data);
+        tablePatients.setItems(data2);
     }
 
-    //TODO: Que pasa cuando haces doble click en la tabla.
-    // (Preguntar si quieres editarlo o borrarlo o salir o añadirlo a lista de espera.
+    public static void init(Collection<Patient> patients) {
+        data2.removeAll(data2);
+        patients.forEach(patient -> {
+            Patient p = new Patient(patient.getDNI(), patient.getNom(), patient.getCognoms(), patient.getDataNaixament(), patient.getGenere(), patient.getTelefon(), patient.getPes(), patient.getAlçada(),new CheckBox());
+            data2.add(p);
+        });
+    }
+
+    @Override
     public void tableClicked(MouseEvent event) {
-        if (event.getClickCount() == 2 && !tablePatients.getSelectionModel().isEmpty()){
-            System.out.println(tablePatients.getSelectionModel().getSelectedItem().getNom());
-        }
+        super.tableClicked(event);
     }
 
     public void manage(ActionEvent event) {
@@ -106,8 +88,8 @@ public class PatientsListController {
         String[] boton = event.getSource().toString().split("'");
         switch(boton[1]) {
             case "Borrar":
-                data.removeAll(dataToDelete);
-                PatientsFilterListController.init(data);
+                data2.removeAll(dataToDelete);
+                PatientsListController.init(data2);
                 break;
             case "Editar":
                 //TODO: Ventana de edición de datos.
@@ -116,5 +98,9 @@ public class PatientsListController {
                 //TODO: Añadir a lista de espera.
                 break;
         }
+    }
+
+    public void search() {
+
     }
 }

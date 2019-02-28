@@ -13,7 +13,7 @@ public class Config {
     /*
     * Method that creates the config file.
     * */
-    public void CreateConfigFile() throws IOException {
+    public void createConfigFile() throws IOException {
         FileWriter fw = new FileWriter(configFile);
         fw.write("name = \"\";\ncsv =\"\";");
         fw.close();
@@ -22,7 +22,7 @@ public class Config {
     /*
     * Method that write the content of the config file.
     * */
-    public void WriteContent(String hospitalName,String csvPath) throws IOException {
+    public void writeContent(String hospitalName,String csvPath) throws IOException {
         FileWriter fw = new FileWriter(configFile);
         fw.write("name = \""+hospitalName+"\"; \ncsv=\""+csvPath+"\"");
         fw.close();
@@ -31,7 +31,7 @@ public class Config {
     /*
     * Method that reads line by line the content of the config file.
     * */
-    public String[] ReadContent() throws IOException {
+    public String[] readContent() throws IOException {
         String[] content = new String[2];
         FileReader fr = new FileReader(configFile);
         BufferedReader br = new BufferedReader(fr);
@@ -55,7 +55,7 @@ public class Config {
     /*
     * Method that loads the value of each line.
     * */
-    public String ReadValueOfContent(String content) {
+    public String readValueOfContent(String content) {
         String[] arrayContent = content.split("\"");
         String value = arrayContent[1];
 
