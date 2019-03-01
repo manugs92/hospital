@@ -1,83 +1,73 @@
 package control;
 
 
+import alerts.Alerts;
+import data.CSV;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.TableColumn;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import model.Patient;
+import model.Persona;
 
+
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class PatientsFilterListController extends PatientsListController {
 
     @FXML
     TableView<Patient> tablePatients;
 
-    private static ObservableList<Patient> data2 = FXCollections.observableArrayList();
+    @FXML
+    TextField name,lastname,dni,phone;
+
+    @FXML
+    CheckBox man,woman;
+
+    @FXML
+    DatePicker birthdate;
+
+    protected static ObservableList<Patient> data2 = FXCollections.observableArrayList();
+    private static List<Patient> patientsAL = new ArrayList<>();
+    private static ObservableList<Patient> defaultData = FXCollections.observableArrayList();
 
 
+    @Override
     public void initialize() {
-        TableColumn DNI = new TableColumn<Patient,String>("DNI");
-        DNI.setPrefWidth(80);
-        DNI.setResizable(false);
-        TableColumn Nom = new TableColumn("Nom");
-        Nom.setPrefWidth(80);
-        Nom.setResizable(false);
-        TableColumn Cognoms = new TableColumn("Cognoms");
-        Cognoms.setPrefWidth(100);
-        Cognoms.setResizable(false);
-        TableColumn DataNaix = new TableColumn("Data de Naixament");
-        DataNaix.setPrefWidth(100);
-        DataNaix.setResizable(false);
-        TableColumn Gender = new TableColumn("Gènere");
-        Gender.setPrefWidth(100);
-        Gender.setResizable(false);
-        TableColumn Telefon = new TableColumn("Telèfon");
-        Telefon.setPrefWidth(100);
-        Telefon.setResizable(false);
-        TableColumn pes = new TableColumn("Pes");
-        pes.setPrefWidth(70);
-        pes.setResizable(false);
-        TableColumn Alçada = new TableColumn("Alçada");
-        Alçada.setPrefWidth(70);
-        Alçada.setResizable(false);
-        TableColumn CB = new TableColumn("Gestionar");
-        CB.setPrefWidth(90);
-        CB.setResizable(false);
-        tablePatients.setEditable(true);
-
-        DNI.setCellValueFactory(new PropertyValueFactory<Patient, String>("DNI"));
-        Nom.setCellValueFactory(new PropertyValueFactory<Patient, String>("Nom"));
-        Cognoms.setCellValueFactory(new PropertyValueFactory<Patient, String>("Cognoms"));
-        DataNaix.setCellValueFactory(new PropertyValueFactory<Patient, String>("DataNaixament"));
-        Gender.setCellValueFactory(new PropertyValueFactory<Patient, String>("genere"));
-        Telefon.setCellValueFactory(new PropertyValueFactory<Patient, String>("Telefon"));
-        pes.setCellValueFactory(new PropertyValueFactory<Patient, Float>("Pes"));
-        Alçada.setCellValueFactory(new PropertyValueFactory<Patient, Integer>("Alçada"));
-        CB.setCellValueFactory(new PropertyValueFactory<Patient, CheckBox>("cb"));
-        tablePatients.getColumns().addAll(DNI, Nom, Cognoms, DataNaix, Gender, Telefon, pes, Alçada,CB);
+        super.initialize();
         tablePatients.setItems(data2);
+        defaultData.addAll(data2);
+        birthdate.setDisable(true);
     }
 
+    
     public static void init(Collection<Patient> patients) {
         data2.removeAll(data2);
         patients.forEach(patient -> {
             Patient p = new Patient(patient.getDNI(), patient.getNom(), patient.getCognoms(), patient.getDataNaixament(), patient.getGenere(), patient.getTelefon(), patient.getPes(), patient.getAlçada(),new CheckBox());
             data2.add(p);
+            patientsAL.add(p);
         });
     }
+
 
     @Override
     public void tableClicked(MouseEvent event) {
         super.tableClicked(event);
     }
 
+
+    @Override
     public void manage(ActionEvent event) {
         ObservableList<Patient> dataToDelete = FXCollections.observableArrayList();
         tablePatients.getItems().forEach(patient -> {
@@ -88,11 +78,26 @@ public class PatientsFilterListController extends PatientsListController {
         String[] boton = event.getSource().toString().split("'");
         switch(boton[1]) {
             case "Borrar":
-                data2.removeAll(dataToDelete);
-                PatientsListController.init(data2);
+                boolean confirmDelete = Alerts.confirmDelete();
+                if(confirmDelete) {
+                    data2.removeAll(dataToDelete);
+                    PatientsListController.init(data2);
+                    dataToDelete.forEach(patient -> {
+                        String patientsLine = patient.getDNI()+","+patient.getNom()+","+patient.getCognoms()+","+patient.getDataNaixament()+","+patient.getGenere()+","+patient.getTelefon()+","+patient.getPes()+","+patient.getAlçada();
+                        try {
+                            CSV.delete(patientsLine);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    });
+                    defaultData.removeAll(dataToDelete);
+                    patientsAL.removeAll(dataToDelete);
+                }
                 break;
             case "Editar":
-                //TODO: Ventana de edición de datos.
+                //TODO: Método que nos cargue los pacientes seleccionados, abra una ventana y los puedas editar.
+                Alerts.editAlert();
+
                 break;
             case "Añadir a lista de espera":
                 //TODO: Añadir a lista de espera.
@@ -101,6 +106,64 @@ public class PatientsFilterListController extends PatientsListController {
     }
 
     public void search() {
-
+        List<Patient> pacients = patientsAL.stream()
+                .filter(pacient -> pacient.getDNI().equals(dni.getText()))
+                .collect(Collectors.toList());
+        if(dni.getText().equals("")) {
+            updateTable(patientsAL);
+        }else updateTable(pacients);
     }
+
+    public void setDefaultData() {
+        updateTable(defaultData);
+        name.setText("");
+        lastname.setText("");
+        man.setSelected(false);
+        woman.setSelected(false);
+        dni.setText("");
+        phone.setText("");
+    }
+
+    private void updateTable(List<Patient> pacients) {
+        data2.clear();
+        data2.addAll(pacients);
+        tablePatients.setItems(data2);
+        PatientsListController.init(data2);
+    }
+
+     public void changeText(KeyEvent keyEvent) {
+        data2.clear();
+        List<Patient> pacients = patientsAL.stream()
+                .filter(pacient -> pacient.getNom().contains(name.getText()))
+                .filter((pacient -> pacient.getCognoms().contains(lastname.getText())))
+                .filter(pacient -> pacient.getTelefon().contains(phone.getText()))
+                .collect(Collectors.toList());
+        data2.addAll(pacients);
+        tablePatients.setItems(data2);
+        PatientsListController.init(data2);
+    }
+
+    public void setGender(ActionEvent event){
+        Persona.Genere selectedGender=null;
+        if(event.getSource().equals(man)) {
+            selectedGender=Patient.Genere.HOME;
+            woman.setSelected(false);
+        }else{
+            selectedGender = Patient.Genere.DONA;
+            man.setSelected(false);
+        }
+        filterByGender(selectedGender);
+    }
+
+    public void filterByGender(Persona.Genere selectedGender){
+        data2.clear();
+        List<Patient> pacients;
+        pacients = patientsAL.stream()
+                .filter(patient -> patient.getGenere().equals(selectedGender))
+                .collect(Collectors.toList());
+        data2.addAll(pacients);
+        tablePatients.setItems(data2);
+        PatientsListController.init(data2);
+    }
+
 }

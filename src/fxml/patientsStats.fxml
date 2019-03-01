@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.PatientStatsController">
+   <children>
+      <Text layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estadísticas de pacientes" underline="true" wrappingWidth="167.13671875">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Text>
+      <PieChart fx:id="genderPieChart" layoutX="14.0" layoutY="81.0" prefHeight="154.0" prefWidth="176.0" />
+      <PieChart fx:id="yearsPieChart" layoutX="289.0" layoutY="81.0" prefHeight="154.0" prefWidth="176.0" />
+      <PieChart fx:id="weightPieChart" layoutX="561.0" layoutY="81.0" prefHeight="154.0" prefWidth="176.0" />
+      <PieChart fx:id="sizePieChart" layoutX="22.0" layoutY="306.0" prefHeight="154.0" prefWidth="176.0" />
+      <PieChart fx:id="waitListPieChart" layoutX="289.0" layoutY="306.0" prefHeight="154.0" prefWidth="176.0" />
+      <Text fx:id="totalMen" layoutX="20.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad hombres:" wrappingWidth="139.90625" />
+      <Text fx:id="totalWomen" layoutX="20.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad mujeres:" wrappingWidth="139.90625" />
+   </children>
+</AnchorPane>

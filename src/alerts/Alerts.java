@@ -73,4 +73,25 @@ public class Alerts {
         alert.setContentText(StringAlerts.CONTENT_ALERT_EMPTY_HOSPITAL_NAME);
         alert.showAndWait();
     }
+
+    public static void editAlert() {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(StringAlerts.WARNING);
+        alert.setContentText(StringAlerts.CONTENT_ALERT_EDIT_METHOD);
+        alert.showAndWait();
+    }
+
+    public static boolean confirmDelete() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(StringAlerts.WARNING);
+        alert.setHeaderText(StringAlerts.HEADER_ALERT_CONFIRM_DELETE_PATIENTS);
+        alert.setContentText(StringAlerts.CONTENT_ALERT_CONFIRM_DELETE_PATIENTS);
+        alert.getButtonTypes().setAll(ButtonType.YES,ButtonType.NO);
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.get() == ButtonType.YES) {
+            return true;
+        }else {
+            return false;
+        }
+    }
 }

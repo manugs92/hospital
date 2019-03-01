@@ -1,5 +1,7 @@
 package control;
 
+import alerts.Alerts;
+import data.CSV;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,6 +11,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import model.Patient;
 
+import java.io.IOException;
 import java.util.Collection;
 
 
@@ -16,7 +19,7 @@ public class PatientsListController {
 
 
     /*
-    *  TODO: Poner botones de editar o borrar. (Seleccion multiple)
+    *  TODO: Al hacer click en editar, mostrar alerta de función no disponible.
     *  TODO: Al hacer doble click, abrir ventana con los datos del paciente. (Y lo puedes gestionar)
     *  TODO: Amplicar tamaño de tabla y colocar scroll.
     * */
@@ -25,7 +28,7 @@ public class PatientsListController {
     TableView<Patient> tablePatients;
 
 
-    public    static  ObservableList<Patient> data = FXCollections.observableArrayList();
+    protected static  ObservableList<Patient> data = FXCollections.observableArrayList();
 
     /*
     * Method that loads all the patients in the tableView.
@@ -56,13 +59,13 @@ public class PatientsListController {
         Cognoms.setPrefWidth(100);
         Cognoms.setResizable(false);
         TableColumn DataNaix = new TableColumn("Data de Naixament");
-        DataNaix.setPrefWidth(100);
+        DataNaix.setPrefWidth(150);
         DataNaix.setResizable(false);
         TableColumn Gender = new TableColumn("Gènere");
         Gender.setPrefWidth(100);
         Gender.setResizable(false);
         TableColumn Telefon = new TableColumn("Telèfon");
-        Telefon.setPrefWidth(100);
+        Telefon.setPrefWidth(120);
         Telefon.setResizable(false);
         TableColumn pes = new TableColumn("Pes");
         pes.setPrefWidth(70);
@@ -89,12 +92,13 @@ public class PatientsListController {
     }
 
     //TODO: Que pasa cuando haces doble click en la tabla.
-    // (Preguntar si quieres editarlo o borrarlo o salir o añadirlo a lista de espera.
+    //TODO: Sale alerta preguntando que quieres hacer (editarlo o borrarlo o salir o añadirlo a lista de espera.)
     public void tableClicked(MouseEvent event) {
         if (event.getClickCount() == 2 && !tablePatients.getSelectionModel().isEmpty()){
             System.out.println(tablePatients.getSelectionModel().getSelectedItem().getNom());
         }
     }
+
 
     public void manage(ActionEvent event) {
         ObservableList<Patient> dataToDelete = FXCollections.observableArrayList();
@@ -106,11 +110,23 @@ public class PatientsListController {
         String[] boton = event.getSource().toString().split("'");
         switch(boton[1]) {
             case "Borrar":
-                data.removeAll(dataToDelete);
-                PatientsFilterListController.init(data);
+                boolean confirmDelete = Alerts.confirmDelete();
+                if(confirmDelete) {
+                    data.removeAll(dataToDelete);
+                    PatientsFilterListController.init(data);
+                    dataToDelete.forEach(patient -> {
+                        String patientsLine = patient.getDNI()+","+patient.getNom()+","+patient.getCognoms()+","+patient.getDataNaixament()+","+patient.getGenere()+","+patient.getTelefon()+","+patient.getPes()+","+patient.getAlçada();
+                        try {
+                            CSV.delete(patientsLine);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    });
+                }
                 break;
             case "Editar":
-                //TODO: Ventana de edición de datos.
+                //TODO: Método que nos cargue los pacientes seleccionados, abra una ventana y los puedas editar.
+                Alerts.editAlert();
                 break;
             case "Añadir a lista de espera":
                 //TODO: Añadir a lista de espera.

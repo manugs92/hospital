@@ -4,6 +4,7 @@ package control;
 import alerts.Alerts;
 import checks.Checks;
 import config.Config;
+import data.CSV;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.MenuItem;
@@ -42,11 +43,15 @@ public class Controller {
 
     private Checks ck = new Checks();
     private Config config = new Config();
+    private CSV csv = new CSV();
     private PatientsListController patientsListController = new PatientsListController();
     private PatientsFilterListController patientsFilterListController = new PatientsFilterListController();
-
     private Hospital hospital = new Hospital();
+
     private static File configFile;
+
+    public Controller() throws IOException {
+    }
 
     /*
     * TODO: Crear todos los FXML de cada tab. (No resizable, misma medida .. etc.)
@@ -68,6 +73,7 @@ public class Controller {
             if (!config.readValueOfContent(content[0]).isEmpty() && !config.readValueOfContent(content[1]).isEmpty()) {
                 hospital.SetName(config.readValueOfContent(content[0]));
                 title.setText(Strings.NAME_OF_THE_APP+" "+hospital.GetName());
+                csv.setPathCSVFile(config.readValueOfContent(content[1]));
                 createHospital(config.readValueOfContent(content[1]));
             }else {
                 selector.getTabs().forEach(tab -> { tab.setDisable(true);tab.getContent().setVisible(false); });
@@ -123,6 +129,7 @@ public class Controller {
                  * (Because you can load a csv file even if you have loaded one hospital before)
                  * Then check if the config file exist, and if it exist, overwrite it with the new data of the new hospital.
                  * If it doesn't exist, we ask to the user if he wants to create it.*/
+                csv.setPathCSVFile(selectedFile.toString());
                 hospital.SetName("");
                 patientsList.getChildren().clear();
                 createHospital(selectedFile.toString());
@@ -168,5 +175,6 @@ public class Controller {
         patientsFilterListController.init(patients);
         patientsList.getChildren().add(FXMLLoader.load(getClass().getResource("../fxml/patientsList.fxml")));
         patientsFilter.getChildren().add(FXMLLoader.load(getClass().getResource("../fxml/patientsFilterList.fxml")));
+        patientsStats.getChildren().add(FXMLLoader.load(getClass().getResource("../fxml/patientsStats.fxml")));
     }
 }

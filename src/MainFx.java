@@ -14,7 +14,7 @@ public class MainFx extends Application {
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("fxml\\sample.fxml"));
         primaryStage.setTitle(Strings.NAME_OF_THE_APP);
-        primaryStage.setScene(new Scene(root, 800, 675));
+        primaryStage.setScene(new Scene(root, 900, 675));
         primaryStage.setResizable(false);
         primaryStage.show();
     }

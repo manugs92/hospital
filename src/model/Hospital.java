@@ -21,14 +21,16 @@ public class Hospital {
 
     public Collection<Patient> loadPacients(String file) {
         CSVReader csvreader = null;
+        FileReader fr = null;
         String[] line;
         mapPatients  = new HashMap<>();
         try {
-            csvreader = new CSVReader(new FileReader(file));
+            fr = new FileReader(file);
+            csvreader = new CSVReader(fr);
             csvreader.readNext(); //saltem primera línia de titols
+            String[] date;
             while ((line = csvreader.readNext()) != null) {
                 cb = new CheckBox();
-                //System.out.println(line[0] + ":" + line[4]);
                 mapPatients.putIfAbsent(line[0],
                         new Patient( line[0],
                                 line[1],
@@ -41,6 +43,8 @@ public class Hospital {
                                 )
                 );
             }
+            csvreader.close();
+            fr.close();
         }catch (IOException e) {
             e.printStackTrace();
         }
