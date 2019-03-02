@@ -27,7 +27,6 @@ public class PatientsListController {
     @FXML
     TableView<Patient> tablePatients;
 
-
     protected static  ObservableList<Patient> data = FXCollections.observableArrayList();
 
     /*
@@ -35,7 +34,7 @@ public class PatientsListController {
     * All times that we create a new Hospital, this method it's called.
     * */
     public static void init(Collection<Patient> patients) {
-        data.removeAll(data);
+        data.clear();
         patients.forEach(patient -> {
             Patient p = new Patient(patient.getDNI(), patient.getNom(), patient.getCognoms(), patient.getDataNaixament(), patient.getGenere(), patient.getTelefon(), patient.getPes(), patient.getAlçada(),new CheckBox());
             data.add(p);
@@ -114,6 +113,8 @@ public class PatientsListController {
                 if(confirmDelete) {
                     data.removeAll(dataToDelete);
                     PatientsFilterListController.init(data);
+                    PatientStatsController.init(data);
+                    PatientsFilterListController.defaultData.forEach(patient -> System.out.println(patient.getNom()));
                     dataToDelete.forEach(patient -> {
                         String patientsLine = patient.getDNI()+","+patient.getNom()+","+patient.getCognoms()+","+patient.getDataNaixament()+","+patient.getGenere()+","+patient.getTelefon()+","+patient.getPes()+","+patient.getAlçada();
                         try {

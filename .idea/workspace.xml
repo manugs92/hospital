@@ -2,29 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Multi gestión añadida">
-      <change afterPath="$PROJECT_DIR$/src/control/PatientStatsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/CSV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fxml/patientsStats.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/strings/StringStats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hospital/MainFx.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/MainFx.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hospital/alerts/Alerts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/alerts/Alerts.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Hospital/config/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/config/config.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hospital/control/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/control/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Hospital/data/hospital.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/data/hospital.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hospital/model/Hospital.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/model/Hospital.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hospital/strings/StringAlerts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/strings/StringAlerts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hospital/strings/Strings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/strings/Strings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/alerts/Alerts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/alerts/Alerts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/data/hospital2.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/config.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/control/PatientStatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/PatientStatsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/control/PatientsFilterListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/PatientsFilterListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/control/PatientsListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/PatientsListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/hospital.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fxml/patientsFilterList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxml/patientsFilterList.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Hospital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Hospital.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strings/StringAlerts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/strings/StringAlerts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strings/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/strings/Strings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/hospital.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/hospital.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/hospital2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fxml/patientsStats.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxml/patientsStats.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -134,28 +124,29 @@
     <session id="-1452567020">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="7" />
           <entry key="fxml" value="65" />
-          <entry key="java" value="21306" />
+          <entry key="java" value="25864" />
           <entry key="txt" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="21306" />
+          <entry key="JAVA" value="25864" />
           <entry key="PLAIN_TEXT" value="86" />
           <entry key="XML" value="65" />
         </counts>
@@ -170,7 +161,7 @@
           <entry key="csv" value="6" />
           <entry key="fxml" value="17" />
           <entry key="iml" value="1" />
-          <entry key="java" value="107" />
+          <entry key="java" value="120" />
           <entry key="md" value="1" />
           <entry key="s" value="1" />
           <entry key="txt" value="12" />
@@ -179,7 +170,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="107" />
+          <entry key="JAVA" value="120" />
           <entry key="PLAIN_TEXT" value="20" />
           <entry key="XML" value="17" />
         </counts>
@@ -191,47 +182,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/control/PatientsFilterListController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-238">
-              <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/control/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
+            <state relative-caret-position="249">
               <caret line="175" column="46" selection-start-line="175" selection-start-column="46" selection-end-line="175" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/control/PatientStatsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/control/PatientsListController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -267,6 +225,13 @@
       <find>CSV</find>
       <find>data.</find>
       <find>data</find>
+      <find>PatientStats</find>
+      <find>PatientStatsC</find>
+      <find>configFile</find>
+      <find>init(</find>
+      <find>.init</find>
+      <find>psc</find>
+      <find>patientsAL</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -324,11 +289,12 @@
         <option value="$PROJECT_DIR$/src/strings/StringAlerts.java" />
         <option value="$PROJECT_DIR$/src/alerts/Alerts.java" />
         <option value="$PROJECT_DIR$/src/MainFx.java" />
-        <option value="$PROJECT_DIR$/src/control/PatientsFilterListController.java" />
         <option value="$PROJECT_DIR$/src/fxml/patientsStats.fxml" />
+        <option value="$PROJECT_DIR$/src/strings/StringStats.java" />
         <option value="$PROJECT_DIR$/src/control/Controller.java" />
         <option value="$PROJECT_DIR$/src/control/PatientsListController.java" />
         <option value="$PROJECT_DIR$/src/control/PatientStatsController.java" />
+        <option value="$PROJECT_DIR$/src/control/PatientsFilterListController.java" />
       </list>
     </option>
   </component>
@@ -368,8 +334,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -431,7 +397,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551466635418" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551493425282" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/test" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -636,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551378382444</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Multi gestión añadida">
+      <created>1551466696659</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1551466696659</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -653,8 +626,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2753404" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.27987897" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -663,7 +637,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32786885" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23114754" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35081968" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39836067" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -704,36 +678,6 @@
     <MESSAGE value="Nuevas funciones añadidas" />
     <MESSAGE value="Multi gestión añadida" />
     <option name="LAST_COMMIT_MESSAGE" value="Multi gestión añadida" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/control/PatientsFilterListController.java</url>
-          <line>126</line>
-          <properties class="control.PatientsFilterListController" method="updateTable">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/control/PatientsFilterListController.java</url>
-          <line>133</line>
-          <properties class="control.PatientsFilterListController" method="changeText">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/control/PatientsFilterListController.java</url>
-          <line>157</line>
-          <properties class="control.PatientsFilterListController" method="filterByGender">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -953,27 +897,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/control/PatientsListController.java">
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/function/Predicate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        <state relative-caret-position="148">
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/control/PatientsFilterListController.java">
+    <entry file="file://$PROJECT_DIR$/src/strings/StringStats.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="14" column="70" lean-forward="true" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/control/PatientStatsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+        <state relative-caret-position="119">
+          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/PatientsFilterListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2088">
+          <caret line="163" column="5" lean-forward="true" selection-start-line="163" selection-start-column="5" selection-end-line="163" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2427#2428#0" expanded="true" />
+            <element signature="e#2468#2469#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/PatientsListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="115" column="54" selection-start-line="115" selection-start-column="54" selection-end-line="115" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -982,7 +946,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/control/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
+        <state relative-caret-position="249">
           <caret line="175" column="46" selection-start-line="175" selection-start-column="46" selection-end-line="175" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />

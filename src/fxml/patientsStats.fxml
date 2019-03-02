@@ -12,12 +12,20 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Text>
-      <PieChart fx:id="genderPieChart" layoutX="14.0" layoutY="81.0" prefHeight="154.0" prefWidth="176.0" />
-      <PieChart fx:id="yearsPieChart" layoutX="289.0" layoutY="81.0" prefHeight="154.0" prefWidth="176.0" />
-      <PieChart fx:id="weightPieChart" layoutX="561.0" layoutY="81.0" prefHeight="154.0" prefWidth="176.0" />
-      <PieChart fx:id="sizePieChart" layoutX="22.0" layoutY="306.0" prefHeight="154.0" prefWidth="176.0" />
-      <PieChart fx:id="waitListPieChart" layoutX="289.0" layoutY="306.0" prefHeight="154.0" prefWidth="176.0" />
-      <Text fx:id="totalMen" layoutX="20.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad hombres:" wrappingWidth="139.90625" />
-      <Text fx:id="totalWomen" layoutX="20.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad mujeres:" wrappingWidth="139.90625" />
+      <PieChart fx:id="genderPieChart" layoutX="14.0" layoutY="141.0" prefHeight="154.0" prefWidth="176.0" />
+      <PieChart fx:id="agesPieChart" layoutX="289.0" layoutY="141.0" prefHeight="154.0" prefWidth="176.0" />
+      <PieChart fx:id="weightPieChart" layoutX="561.0" layoutY="141.0" prefHeight="154.0" prefWidth="176.0" />
+      <PieChart fx:id="sizePieChart" layoutX="22.0" layoutY="366.0" prefHeight="154.0" prefWidth="176.0" />
+      <PieChart fx:id="waitListPieChart" layoutX="289.0" layoutY="366.0" prefHeight="154.0" prefWidth="176.0" />
+      <Text fx:id="totalMen" layoutX="20.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad hombres:" wrappingWidth="139.90625" />
+      <Text fx:id="totalWomen" layoutX="20.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad mujeres:" wrappingWidth="139.90625" />
+      <Text fill="#ff0909" layoutX="14.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Importante: Cada vez que se modifique la lista de pacientes, hay que volver a cargar las estadísticas." wrappingWidth="616.13671875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button layoutX="22.0" layoutY="96.0" mnemonicParsing="false" onMouseClicked="#createCharts" text="Cargar estadísticas" />
+      <Text fx:id="minAgeRanked" layoutX="299.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menor rango de edad:" wrappingWidth="154.90625" />
+      <Text fx:id="maxAgeRanked" layoutX="299.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mayor rango de edad:" wrappingWidth="167.13671875" />
    </children>
 </AnchorPane>

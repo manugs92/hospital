@@ -44,8 +44,8 @@ public class Controller {
     private Checks ck = new Checks();
     private Config config = new Config();
     private CSV csv = new CSV();
-    private PatientsListController patientsListController = new PatientsListController();
-    private PatientsFilterListController patientsFilterListController = new PatientsFilterListController();
+    //private PatientsListController patientsListController = new PatientsListController();
+    //private PatientsFilterListController patientsFilterListController = new PatientsFilterListController();
     private Hospital hospital = new Hospital();
 
     private static File configFile;
@@ -171,8 +171,9 @@ public class Controller {
         }
         Collection<Patient> patients = hospital.loadPacients(selectedCSV);
         selector.getSelectionModel().selectFirst();
-        patientsListController.init(patients);
-        patientsFilterListController.init(patients);
+        PatientsListController.init(patients);
+        PatientsFilterListController.init(patients);
+        PatientStatsController.init(patients);
         patientsList.getChildren().add(FXMLLoader.load(getClass().getResource("../fxml/patientsList.fxml")));
         patientsFilter.getChildren().add(FXMLLoader.load(getClass().getResource("../fxml/patientsFilterList.fxml")));
         patientsStats.getChildren().add(FXMLLoader.load(getClass().getResource("../fxml/patientsStats.fxml")));
