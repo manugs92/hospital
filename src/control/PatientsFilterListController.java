@@ -51,7 +51,6 @@ public class PatientsFilterListController extends PatientsListController {
     public void initialize() {
         super.initialize();
         tablePatients.setItems(data2);
-        defaultData.addAll(data2);
         birthdate.setDisable(true);
     }
 
@@ -72,6 +71,7 @@ public class PatientsFilterListController extends PatientsListController {
             patientsAL.add(p);
             defaultData.add(p);
         });
+        System.out.println(defaultData.size());
     }
 
 

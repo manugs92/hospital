@@ -22,14 +22,14 @@ public class PatientStatsController {
     @FXML
     Text totalMen,totalWomen,maxAgeRanked,minAgeRanked;
 
-    protected static ObservableList<Patient> data2 = FXCollections.observableArrayList();
+    protected static ObservableList<Patient> data3 = FXCollections.observableArrayList();
 
 
     public static void init(Collection<Patient> patients) {
-        data2.clear();
+        data3.clear();
         patients.forEach(patient -> {
             Patient p = new Patient(patient.getDNI(), patient.getNom(), patient.getCognoms(), patient.getDataNaixament(), patient.getGenere(), patient.getTelefon(), patient.getPes(), patient.getAlçada(),new CheckBox());
-            data2.add(p);
+            data3.add(p);
         });
     }
 
@@ -44,10 +44,10 @@ public class PatientStatsController {
 
     public void createGenderPieChart() {
         genderPieChart.getData().clear();
-        long dones = data2.stream()
+        long dones = data3.stream()
                 .filter(pacient -> pacient.getGenere() == Persona.Genere.DONA)
                 .count();
-        long homes = data2.stream()
+        long homes = data3.stream()
                 .filter(pacient -> pacient.getGenere() == Persona.Genere.HOME)
                 .count();
         genderPieChart.setTitle(StringStats.TITLE_GENDER_PIE_CHART);
@@ -65,9 +65,9 @@ public class PatientStatsController {
         long max = 0;
         long[] ages = new long[100];
         ArrayList<Integer> agesaddes = new ArrayList<>();
-        for(int i=0;i<data2.size();i++) {
-            final long patientYear = data2.get(i).getEdat();
-            ages[i] = data2.stream()
+        for(int i=0;i<data3.size();i++) {
+            final long patientYear = data3.get(i).getEdat();
+            ages[i] = data3.stream()
                     .filter(patient -> patient.getEdat() == patientYear)
                     .count();
             if(!agesaddes.contains((int)patientYear)) {

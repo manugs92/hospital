@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Multi gestión añadida">
-      <change afterPath="$PROJECT_DIR$/src/strings/StringStats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hospital/config/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/config/config.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hospital/data/hospital.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/data/hospital.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hospital/data/hospital2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/config.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hospital/control/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hospital/control/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/control/PatientStatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/PatientStatsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/control/PatientsFilterListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/PatientsFilterListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/control/PatientsListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/PatientsListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/hospital.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/hospital.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/hospital2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fxml/patientsStats.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxml/patientsStats.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -140,13 +133,13 @@
         <counts>
           <entry key="dummy" value="7" />
           <entry key="fxml" value="65" />
-          <entry key="java" value="25864" />
+          <entry key="java" value="26045" />
           <entry key="txt" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="25864" />
+          <entry key="JAVA" value="26045" />
           <entry key="PLAIN_TEXT" value="86" />
           <entry key="XML" value="65" />
         </counts>
@@ -161,7 +154,7 @@
           <entry key="csv" value="6" />
           <entry key="fxml" value="17" />
           <entry key="iml" value="1" />
-          <entry key="java" value="120" />
+          <entry key="java" value="128" />
           <entry key="md" value="1" />
           <entry key="s" value="1" />
           <entry key="txt" value="12" />
@@ -170,7 +163,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="120" />
+          <entry key="JAVA" value="128" />
           <entry key="PLAIN_TEXT" value="20" />
           <entry key="XML" value="17" />
         </counts>
@@ -183,12 +176,26 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/control/Controller.java">
+        <entry file="file://$PROJECT_DIR$/src/control/PatientsFilterListController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="175" column="46" selection-start-line="175" selection-start-column="46" selection-end-line="175" selection-end-column="46" />
+            <state relative-caret-position="212">
+              <caret line="53" column="35" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/control/PatientStatsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1309">
+              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1074#1075#0" expanded="true" />
+                <element signature="e#1104#1105#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -232,6 +239,7 @@
       <find>.init</find>
       <find>psc</find>
       <find>patientsAL</find>
+      <find>defaultData</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -397,7 +405,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551493425282" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551495609176" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/test" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -609,7 +617,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551466696659</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Multi gestión añadida">
+      <created>1551493529643</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1551493529643</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -911,12 +926,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/control/PatientStatsController.java">
+    <entry file="file://$PROJECT_DIR$/src/control/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+        <state relative-caret-position="137">
+          <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/PatientsListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/PatientStatsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1074#1075#0" expanded="true" />
             <element signature="e#1104#1105#0" expanded="true" />
           </folding>
         </state>
@@ -924,30 +960,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/control/PatientsFilterListController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2088">
-          <caret line="163" column="5" lean-forward="true" selection-start-line="163" selection-start-column="5" selection-end-line="163" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2427#2428#0" expanded="true" />
-            <element signature="e#2468#2469#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/control/PatientsListController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="115" column="54" selection-start-line="115" selection-start-column="54" selection-end-line="115" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/control/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="175" column="46" selection-start-line="175" selection-start-column="46" selection-end-line="175" selection-end-column="46" />
+        <state relative-caret-position="212">
+          <caret line="53" column="35" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

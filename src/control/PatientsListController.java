@@ -19,9 +19,7 @@ public class PatientsListController {
 
 
     /*
-    *  TODO: Al hacer click en editar, mostrar alerta de función no disponible.
     *  TODO: Al hacer doble click, abrir ventana con los datos del paciente. (Y lo puedes gestionar)
-    *  TODO: Amplicar tamaño de tabla y colocar scroll.
     * */
 
     @FXML

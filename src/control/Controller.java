@@ -54,10 +54,8 @@ public class Controller {
     }
 
     /*
-    * TODO: Crear todos los FXML de cada tab. (No resizable, misma medida .. etc.)
-    * TODO: Crear sus respectivos Controller.
-    * TODO: Definir cada uno de los FXML en sus respectivas zonas.
-    * TODO: Programar controller's de cada uno de los tabs.
+    * TODO: Crear FXML de añadir lista de espera.
+    * TODO: Crear controller lista de espera.
     * */
 
     /*
