@@ -71,7 +71,6 @@ public class PatientsFilterListController extends PatientsListController {
             patientsAL.add(p);
             defaultData.add(p);
         });
-        System.out.println(defaultData.size());
     }
 
 
