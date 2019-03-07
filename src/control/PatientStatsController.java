@@ -8,6 +8,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.text.Text;
 import model.Patient;
 import model.Persona;
+import model.WaitingList;
 import strings.StringStats;
 
 import java.util.ArrayList;
@@ -16,13 +17,17 @@ import java.util.Collection;
 
 public class PatientStatsController {
 
+
+    //TODO: Crear pieChart de Lista de Espera.
+
     @FXML
     PieChart genderPieChart,agesPieChart,weightPieChart,sizePieChart,waitListPieChart;
 
     @FXML
-    Text totalMen,totalWomen,maxAgeRanked,minAgeRanked;
+    Text totalMen,totalWomen,maxAgeRanked,minAgeRanked,maxWeightRanked,minWeightRanked,minSizeRanked,maxSizeRanked;
 
     protected static ObservableList<Patient> data3 = FXCollections.observableArrayList();
+    protected static WaitingList waitingList = new WaitingList();
 
 
     public static void init(Collection<Patient> patients) {
@@ -31,6 +36,11 @@ public class PatientStatsController {
             Patient p = new Patient(patient.getDNI(), patient.getNom(), patient.getCognoms(), patient.getDataNaixament(), patient.getGenere(), patient.getTelefon(), patient.getPes(), patient.getAlçada(),new CheckBox());
             data3.add(p);
         });
+
+    }
+
+    public static void updateWaitingList(WaitingList wl) {
+        waitingList=wl;
     }
 
     public void initialize() {
@@ -40,6 +50,8 @@ public class PatientStatsController {
     public void createCharts() {
         createGenderPieChart();
         createYearsPieChart();
+        createWeightPieChart();
+        createSizePieChart();
     }
 
     public void createGenderPieChart() {
@@ -61,26 +73,15 @@ public class PatientStatsController {
 
     public void createYearsPieChart() {
         agesPieChart.getData().clear();
-        long min = 0;
-        long max = 0;
-        long[] ages = new long[100];
-        ArrayList<Integer> agesaddes = new ArrayList<>();
-        for(int i=0;i<data3.size();i++) {
-            final long patientYear = data3.get(i).getEdat();
-            ages[i] = data3.stream()
-                    .filter(patient -> patient.getEdat() == patientYear)
-                    .count();
-            if(!agesaddes.contains((int)patientYear)) {
-                agesPieChart.getData().add(new PieChart.Data(String.valueOf(patientYear),ages[i]));
-            }
-            agesaddes.add((int) patientYear);
-            i = i+1;
-            if(min>patientYear || min==0) {
-                min = patientYear;
-            }
-            if(max<patientYear) {
-                max = patientYear;
-            }
+        int min = 0;
+        int max = 0;
+        ArrayList<Integer> ageslist = new ArrayList<>();
+        for(int i=0;i<=data3.size()-1;i++) {
+            final int patientAge = data3.get(i).getEdat();
+            if(!ageslist.contains((int)patientAge)) { agesPieChart.getData().add(new PieChart.Data(String.valueOf(patientAge),patientAge)); }
+            ageslist.add((int) patientAge);
+            if(min>patientAge || min==0) { min = patientAge; }
+            if(max<patientAge) { max = patientAge; }
         }
         agesPieChart.setTitle(StringStats.TITLE_AGE_PIE_CHART);
         String maxYearRankedString = StringStats.MAX_AGE_RANKED+" "+max;
@@ -88,5 +89,43 @@ public class PatientStatsController {
         maxAgeRanked.setText(maxYearRankedString);
         minAgeRanked.setText(minYearRankedString);
 
+    }
+
+    public void createWeightPieChart() {
+        weightPieChart.getData().clear();
+        float min = 0;
+        float max = 0;
+        ArrayList<Float> weighlist = new ArrayList<>();
+        for(int i=0;i<=data3.size()-1;i++) {
+            final float patientWeight = data3.get(i).getPes();
+            if(!weighlist.contains(patientWeight)) { weightPieChart.getData().add(new PieChart.Data(String.valueOf(patientWeight),patientWeight));}
+            weighlist.add((float)patientWeight);
+            if(min>patientWeight || min==0) { min =  patientWeight; }
+            if(max<patientWeight) { max =  patientWeight; }
+        }
+        weightPieChart.setTitle(StringStats.TITLE_WEIGHT_PIE_CHART);
+        String maxYearRankedString = StringStats.MAX_WEIGHT_RANKED+" "+max;
+        String minYearRankedString = StringStats.MIN_WEIGHT_RANKED+" "+min;
+        maxWeightRanked.setText(maxYearRankedString);
+        minWeightRanked.setText(minYearRankedString);
+    }
+
+    public void createSizePieChart() {
+        sizePieChart.getData().clear();
+        int min = 0;
+        int max = 0;
+        ArrayList<Integer> sizelist = new ArrayList<>();
+        for(int i=0;i<=data3.size()-1;i++) {
+            final int patientSize = data3.get(i).getAlçada();
+            if(!sizelist.contains(patientSize)) { sizePieChart.getData().add(new PieChart.Data(String.valueOf(patientSize),patientSize));}
+            sizelist.add((int)patientSize);
+            if(min>patientSize || min==0) { min =  patientSize; }
+            if(max<patientSize) { max =  patientSize; }
+        }
+        sizePieChart.setTitle(StringStats.TITLE_SIZE_PIE_CHART);
+        String maxYearRankedString = StringStats.MAX_SIZE_RANKED+" "+max;
+        String minYearRankedString = StringStats.MIN_SIZE_RANKED+" "+min;
+        maxSizeRanked.setText(maxYearRankedString);
+        minSizeRanked.setText(minYearRankedString);
     }
 }

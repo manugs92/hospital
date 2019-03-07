@@ -15,6 +15,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import model.Patient;
 import model.Persona;
+import model.WaitingList;
 
 
 import java.io.IOException;
@@ -40,26 +41,14 @@ public class PatientsFilterListController extends PatientsListController {
     protected static ObservableList<Patient> data2 = FXCollections.observableArrayList();
     protected static List<Patient> patientsAL = new ArrayList<>();
     protected static ObservableList<Patient> defaultData = FXCollections.observableArrayList();
+    protected static WaitingList waitingList = new WaitingList();
 
 
     /*
-    * Method overriden from the extendes class PatiensListController.
-    * It gonna be executed always at the first time that the program run.
-    * It heredates all the jobs done by the extendes class, and add the next ones.
-    * */
-    @Override
-    public void initialize() {
-        super.initialize();
-        tablePatients.setItems(data2);
-        birthdate.setDisable(true);
-    }
-
-
-    /*
-    * Function called "init" that clear all the data saved on data2, and put all the patiens passed from
-    * the collectionsList.
-    * It's very usefull when we overwrite the table from other controllers.
-    * If we do it, we will refresh the table calling to the init method.
+     * Function called "init" that clear all the data saved on data2, and put all the patiens passed from
+     * the collectionsList.
+     * It's very usefull when we overwrite the table from other controllers.
+     * If we do it, we will refresh the table calling to the init method.
      */
     public static void init(Collection<Patient> patients) {
         data2.clear();
@@ -71,6 +60,22 @@ public class PatientsFilterListController extends PatientsListController {
             patientsAL.add(p);
             defaultData.add(p);
         });
+    }
+
+    public static void updateWaitingList(WaitingList wl) {
+        waitingList=wl;
+    }
+
+    /*
+    * Method overriden from the extendes class PatiensListController.
+    * It gonna be executed always at the first time that the program run.
+    * It heredates all the jobs done by the extendes class, and add the next ones.
+    * */
+    @Override
+    public void initialize() {
+        super.initialize();
+        tablePatients.setItems(data2);
+        birthdate.setDisable(true);
     }
 
 

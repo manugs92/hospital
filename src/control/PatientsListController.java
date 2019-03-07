@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import model.Patient;
+import model.WaitingList;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -20,12 +21,15 @@ public class PatientsListController {
 
     /*
     *  TODO: Al hacer doble click, abrir ventana con los datos del paciente. (Y lo puedes gestionar)
+    *  TODO: Botón de añadir nuevo paciente.
+    *  TODO: Si se crea paciente, guardar en un nuevo CSV, y actualizar todo.
     * */
 
     @FXML
     TableView<Patient> tablePatients;
 
     protected static  ObservableList<Patient> data = FXCollections.observableArrayList();
+    protected static WaitingList waitingList = new WaitingList();
 
     /*
     * Method that loads all the patients in the tableView.
@@ -37,6 +41,10 @@ public class PatientsListController {
             Patient p = new Patient(patient.getDNI(), patient.getNom(), patient.getCognoms(), patient.getDataNaixament(), patient.getGenere(), patient.getTelefon(), patient.getPes(), patient.getAlçada(),new CheckBox());
             data.add(p);
         });
+    }
+
+    public static void updateWaitingList(WaitingList wl) {
+        waitingList=wl;
     }
 
 
@@ -92,7 +100,12 @@ public class PatientsListController {
     //TODO: Sale alerta preguntando que quieres hacer (editarlo o borrarlo o salir o añadirlo a lista de espera.)
     public void tableClicked(MouseEvent event) {
         if (event.getClickCount() == 2 && !tablePatients.getSelectionModel().isEmpty()){
-            System.out.println(tablePatients.getSelectionModel().getSelectedItem().getNom());
+            waitingList.setPatient(tablePatients.getSelectionModel().getSelectedItem(),"Por que si");
+            PatientsFilterListController.updateWaitingList(waitingList);
+            PatientStatsController.updateWaitingList(waitingList);
+            System.out.println(PatientsFilterListController.waitingList.getSize());
+            System.out.println(PatientStatsController.waitingList.getSize());
+            System.out.println(waitingList.getSize());
         }
     }
 
@@ -112,7 +125,6 @@ public class PatientsListController {
                     data.removeAll(dataToDelete);
                     PatientsFilterListController.init(data);
                     PatientStatsController.init(data);
-                    PatientsFilterListController.defaultData.forEach(patient -> System.out.println(patient.getNom()));
                     dataToDelete.forEach(patient -> {
                         String patientsLine = patient.getDNI()+","+patient.getNom()+","+patient.getCognoms()+","+patient.getDataNaixament()+","+patient.getGenere()+","+patient.getTelefon()+","+patient.getPes()+","+patient.getAlçada();
                         try {
